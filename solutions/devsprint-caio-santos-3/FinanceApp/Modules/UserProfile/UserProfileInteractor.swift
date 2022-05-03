@@ -18,12 +18,12 @@ final class UserProfileInteractor: UserProfileInteractorProtocol {
     }
 
     func fetchData() {
-        service.load(endpoint: .userProfile) { [weak self] (response: Result<UserEntity, FinanceServiceError>) in
+        service.load(endpoint: .userProfile) { [weak presenter] (response: Result<UserEntity, FinanceServiceError>) in
             switch response {
                 case let .success(success):
-                    self?.presenter?.didFetchData(success)
+                    presenter?.didFetchData(success)
                 case let .failure(failure):
-                    self?.presenter?.didErrorData(error: failure)
+                    presenter?.didErrorData(error: failure)
             }
         }
     }
