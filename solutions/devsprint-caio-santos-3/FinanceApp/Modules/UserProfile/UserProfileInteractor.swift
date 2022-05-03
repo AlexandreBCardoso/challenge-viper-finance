@@ -8,6 +8,8 @@
 import Foundation
 
 final class UserProfileInteractor: UserProfileInteractorProtocol {
+    
+    private let service: FinanceServiceProtocol
 
     weak var presenter: UserProfileInteractorDelegate?
     

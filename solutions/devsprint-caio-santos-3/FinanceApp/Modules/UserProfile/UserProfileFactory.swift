@@ -15,7 +15,7 @@ struct UserProfileFactory: ModuleFactory {
         let viewController = UserProfileViewController(presenter: presenter)
         
         presenter.view = viewController
-        presenter.interactor = UserProfileInteractor()
+        presenter.interactor = UserProfileInteractor(service: FinanceService())
         interactor.presenter = presenter
         return viewController
     }
